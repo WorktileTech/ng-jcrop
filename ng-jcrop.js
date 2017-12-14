@@ -11,7 +11,7 @@
  * @property {number} h
  */
 
-(function(angular){
+(function(angular,jQuery){
     'use strict';
 
     angular.module('ngJcrop', [])
@@ -84,11 +84,11 @@
     }])
 
     .run(['$window', function($window){
-        if( !$window.jQuery ){
+        if( !jQuery ){
             throw new Error("jQuery isn't included");
         }
 
-        if( !$window.jQuery.Jcrop ){
+        if( !jQuery.Jcrop ){
             throw new Error("Jcrop isn't included");
         }
     }])
@@ -397,4 +397,4 @@
     }]);
 
 
-})(angular);
+})(angular,jQuery);
